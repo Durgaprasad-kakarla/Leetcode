@@ -12,3 +12,5 @@ class Solution:
             else:
                 root=root.right
         return root
+''' Time Complexity-O(logN)
+    Space Complexity-O(1)'''

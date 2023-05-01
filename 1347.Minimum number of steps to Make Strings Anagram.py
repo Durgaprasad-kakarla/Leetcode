@@ -5,13 +5,10 @@ class Solution:
         count=0
         for i in dict1.keys():
             if not dict2[i]:
-                dict2[i]=0    
-        for i in dict1.keys():
-            if dict2[i]==0:
                 count+=dict1[i]
             else:
                 if dict1[i]>dict2[i]:
                     count+=(dict1[i]-dict2[i])
         return count
 ''' Time Complexity--O(n)
-    Space Complexity--O(m*n)'''
+    Space Complexity--O(n)'''

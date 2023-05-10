@@ -1,11 +1,21 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max1=0
-        for i in range(1,len(s)+1):
-            j=0
-            while j<i and max1<len(set(s[j:i])):
-                if len(s[j:i])==len(set(s[j:i])) and len(s[j:i])>max1:
-                        max1=len(s[j:i])
-                j=j+1
-        return max1
+        count=0
+        i=0
+        n=len(s)
+        dict1={}
+        while i<n:
+            if s[i] in dict1:
+                max1=max(max1,count)
+                count=0
+                i=dict1[s[i]]
+                dict1={}
+            else:
+                dict1[s[i]]=i
+                count+=1
+            i+=1
+        return max(max1,count)
+''' Time complexity--O(n*n)
+    Space Complexity--O(n)'''
         

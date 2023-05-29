@@ -16,5 +16,5 @@ class Solution:
             for j in range(m):
                 if i in set1 or j in set2:
                     matrix[i][j]=0
-''' Time Complexity--O(m*n)+O(m*n*(m+n))
-    Space Complexity--O(max(m,n))'''
+''' Time Complexity--O(2*m*n)
+    Space Complexity--O(m)+O(n)'''

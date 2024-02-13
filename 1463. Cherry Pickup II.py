@@ -25,3 +25,5 @@ class Solution:
         n=len(grid[0])
         dp=[[[[-1 for i in range(n)]for j in range(m)]for k in range(n)]for x in range(m)]
         return func(0,0,0,len(grid[0])-1,dp)
+''' Time Complexity--O(m^2*n^2)
+    Space Complexity--O(m^2*n^2)'''

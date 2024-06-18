@@ -1,0 +1,16 @@
+class Solution:
+    def maxProfitAssignment(self, difficulty: List[int], profit: List[int], worker: List[int]) -> int:
+        n=len(difficulty)
+        heap=[]
+        for i in range(n):
+            heapq.heappush(heap,[difficulty[i],-profit[i]])
+        workers=len(worker)
+        maxi,tot=0,0
+        worker.sort()
+        for i in range(workers):
+            while heap and heap[0][0]<=worker[i]:
+                maxi=max(maxi,-heapq.heappop(heap)[1])
+            tot+=maxi
+        return tot
+''' Time Complexity--O(n*logk+klogk)
+    Space Complexity--O(n)'''
